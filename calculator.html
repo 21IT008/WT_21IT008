@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./javascript/demo.js"></script>
+</head>
+<body>
+    <div id="first"></div>
+    <p>enter num1</p><input type="number" id="num1">
+    <p>enter num2</p><input type="number" id="num2"><br><br>
+    <p>select the operation : </p>
+    <select name="calc" id="calc" onchange="calc()">
+        <option value="null">select</option>
+    <option value="sum">Addition(+)</option>
+    <option value="sub">Subtraction(-)</option>
+    <option value="mul">Multiplication(X)</option>
+    <option value="div">Division(/)</option>
+</select>
+    <p id="ans"></p>
+</body>
+</html>
