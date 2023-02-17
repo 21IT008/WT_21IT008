@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="Myform" action="www.google.com" method="post">
+        NAME: <input type="text" name="username" id="ID_name"><span id="span"></span>
+        <br><br>
+        PASSWORD: <input type="password" name="password" id="ID_password"><span id="span2"></span><br><br>
+        
+        Sports: <input onclick="Count()" type="checkbox" id="Cricket">Cricket
+        <input onclick="Count()" type="checkbox" id="Football">Football
+        <input onclick="Count()" type="checkbox" id="Volleyball">Volleyball <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input onclick="Count()" type="checkbox" id="Basketball">Basketball
+        <input onclick="Count()" type="checkbox" id="Chess">Chess
+        <input onclick="Count()" type="checkbox" id="Kabadii">Kabadii <p id="span3"></p><br><br>
+        <input type="button" value="submit" onclick="isvalid()">
+    </form>
+    <script>
+    let c=0;
+        function Count(){
+            c++;
+        }
+        function isvalid(){
+           
+            let name=document.getElementById("ID_name").value;
+            let password=document.getElementById("ID_password").value;
+            let valid=true;
+            if(name.length==0){
+                //console.log("Please enter your Username");
+                document.getElementById('span').textContent="Please enter your Name";
+                valid=false;
+                document.Myform.username.focus();
+            }
+            else{
+                document.getElementById('span').textContent=null;
+            }
+            if(password.length==0 && valid){
+                //console.log("Please enter your Password");
+                document.getElementById('span2').textContent="Please enter your Password";
+                valid=false;
+                document.Myform.password.focus();
+            }
+            else{
+                document.getElementById('span2').textContent=null;
+            }
+            if(c<2){
+                document.getElementById('span3').textContent="Please choose atleast two sports";
+                valid=false;
+            }
+            else{
+                document.getElementById('span3').textContent=null;
+            }
+            if(valid){
+                document.Myform.submit();
+            }
+        }
+    </script>
+</body>
+</html>
