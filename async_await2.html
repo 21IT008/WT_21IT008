@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="number" id="name" onblur="callAPI()">
+    <table border="solid">
+        <tr id="name"></tr><tr id="row"></tr></table>
+    <script>
+        async function callAPI(){
+            console.log("yes");
+            const name=document.getElementById("name").value;
+            const API='https://dog.ceo/api/breeds/image/random';
+            
+           
+            for(let i=0;i<name;i++){
+                const data=await fetch(API);
+                const JSONdata=await data.json();
+                console.log("JSON data: " + JSONdata);
+            }
+            /*const trow1=document.createElement('tr');
+            const tdata3=document.createElement('td');
+            tdata3.textContent=JSONdata.name;
+            
+            trow1.appendChild(tdata3);
+            document.getElementById('row').appendChild(trow1);
+            
+            let str=[];
+            str=JSONdata.country;
+            for(let i=0;i<str.length;i++){
+            const trow=document.createElement('tr');
+            const tdata=document.createElement('td');
+            tdata.textContent=str[i].country_id;
+            const tdata2=document.createElement('td');
+            tdata2.textContent=str[i].probability;
+            trow.appendChild(tdata);
+            trow.appendChild(tdata2);
+            document.getElementById("row").appendChild(trow);
+            }*/
+        }
+    </script>
+</body>
+</html>

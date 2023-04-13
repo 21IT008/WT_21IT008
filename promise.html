@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="age" id="age_id" required>
+    <input type="number" placeholder="marks" id="marks_id" required>
+    <input type="number" placeholder="height" id="height_id" required>
+    <button onclick="check()">submit</button>
+    <p id="ans"></p>
+    <script>
+        function check(){
+        let myage=document.getElementById("age_id").value;
+        let mymarks=document.getElementById("marks_id").value;
+        let myheight=document.getElementById("height_id").value;
+        let Mypromise=new Promise(function(resolve,reject){
+            if(myage<100 && mymarks>33 && myheight>140){
+                resolve("resolved");
+            }
+            else{
+                reject("rejected");
+            }
+        })
+
+        Mypromise.then(function(msg){
+            console.log(msg);
+            document.getElementById('ans').innerHTML=msg;
+        }).catch(function(msg){
+            document.getElementById('ans').innerHTML=msg;
+        })
+        }
+    </script>
+</body>
+</html>
